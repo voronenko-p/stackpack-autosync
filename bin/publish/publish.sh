@@ -114,7 +114,7 @@ exitOnError
 comment "Committed new version $publish_version"
 
 
-tag_name="$stackpack-$publish_version"
+tag_name="$publish_version"
 git tag "$tag_name"
 exitOnError
 comment "Tag $tag_name created"
