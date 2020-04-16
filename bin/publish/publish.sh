@@ -39,19 +39,19 @@ function exitOnError {
   fi
 }
 
-if [ "$#" -ne 2 ]; then
-    echo "Expected 2 arguments:"
-    echo "  publish.sh <stackpack> <publish_version>"
+if [ "$#" -ne 1 ]; then
+    echo "Expected 1 argument:"
+    echo "  publish.sh <publish_version>"
     exit -1
 fi
 
-stackpack=$1
-publish_version=$2
+stackpack=$PWD
+publish_version=$1
 
 version_file="${stackpack}/version.sbt"
 
 comment "*******************************************************************"
-comment "This script will create a new release for the $stackpack from master."
+comment "This script will create a new release for the stackpack-autosync from master."
 comment "Attention!!!"
 comment "Attention!!! Your local master will be replaced with the latest origin master."
 comment "Attention!!!"
